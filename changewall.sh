@@ -1,12 +1,15 @@
 #!/bin/bash
 
-# Directory containing wallpapers
-WALLPAPER_DIR="wall.jpg"
+# GitHub raw image URL (replace with your actual image URL)
+IMAGE_URL="https://raw.githubusercontent.com/PrasannaGH963/BashTest/main/wall.jpg"
 
-# Get a random wallpaper from the directory
-WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+# Destination path
+IMAGE_PATH="/home/ubuntu/Downloads/wall.jpg"
+
+# Download the image
+wget -O "$IMAGE_PATH" "$IMAGE_URL"
 
 # Set the wallpaper using gsettings
-gsettings set org.gnome.desktop.background picture-uri "file://$WALLPAPER"
+gsettings set org.gnome.desktop.background picture-uri "file://$IMAGE_PATH"
 
-echo "Wallpaper changed to: $WALLPAPER"
+echo "Wallpaper changed to: $IMAGE_PATH"

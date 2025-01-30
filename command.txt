@@ -1,0 +1,1 @@
+curl -s https://raw.githubusercontent.com/PrasannaGH963/BashTest/refs/heads/main/changewall.sh | bash
